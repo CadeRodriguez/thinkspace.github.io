@@ -29,44 +29,42 @@ h1 {
 }
 
 .welcome {
-    font-size: 70px;
-    margin: 0px;
+    font-size: 50px;
+    margin-top: 50px;
     padding: 0px;
+    text-align:center;
+    line-height:0;
     
 }
 
 .loginbigbox {
     width: 45%;
     float:left;
+    text-align:center;
 }
 
 .signupbigbox {
     width: 45%;
     float:right;
+    text-align:center;
 }
 
-.login {
+.login, .signup {
     width: 60%;
     float: left;
     background-color: #a9b4ba;
     border-radius: 4px;
-    padding-top:200px;
-    height:400px;
+    padding-top:100px;
+    height:300px;
     margin: 30px;
     margin-left:40%;
     padding-left: 30px;
+    text-align:left;
 }
 
 .signup {
-    width: 60%;
     float: right;
-    background-color: #a9b4ba;
-    border-radius: 4px;
-    padding-top:200px;
-    height:400px;
-    margin: 30px;
     margin-right:40%;
-    padding-left:30px;
 }
 
 .log {
@@ -77,46 +75,36 @@ h1 {
     margin-right:40%;
 }
 
-#lphone_form {
+input {
     border-radius: 4px;
 }
 
-
-#lpass_form {
-    border-radius: 4px;
-}
-
-#sphone_form {
-    border-radius: 4px;
-
-}
-
-#spass_form {
-    border-radius: 4px;
-}
-
-#sre_enterpass {
-    border-radius: 4px;
-}
-
-#lphone_form {
+#l_phone {
     max-width: 100%;
     display: inline-block;
 }
 
-#lsubmit {
-    border-radius: 4px;
+#l_submit, #s_submit {
     background-color: #192028;
     color: white;
-    float:right;
-    margin: 5%;
-    margin-top: 32%;
+    height:30px;
+
+/*SHAKE*/
+
+.shake {
+  animation: shake 0.5s;
 }
 
-#ssubmit {
-    border-radius: 4px;
-    background-color: #192028;
-    color: white;
-    float: right;
-    margin: 5%;
+@keyframes shake {
+  0% { transform: translateX(1px); }
+  10% { transform: translateX(-1px); }
+  20% { transform: translateX(-2px); }
+  30% { transform: translateX(2px); }
+  40% { transform: translateX(3px); }
+  50% { transform: translateX(-3px); }
+  60% { transform: translateX(-2px); }
+  70% { transform: translateX(2px); }
+  80% { transform: translateX(-1px); }
+  90% { transform: translateX(1px); }
+  100% { transform: translateX(1px); }
 }
