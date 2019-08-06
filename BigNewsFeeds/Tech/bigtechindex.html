@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head profile="https://i.ibb.co/KVYHtrX/Think-Space-logo.png">
+    <title>Big Tech - Thinkspace</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="bigtechstyles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/KVYHtrX/Think-Space-logo.png">
+</head>
+
+<body>
+
+<!-- HEADER BAR -->
+<div class="headerbar">
+    <h4><a href="javascript:history.back()">Back</a></h4>
+<div class = "header">
+    <h1>Thinkspace</h1>
+    <img src="https://i.ibb.co/KVYHtrX/Think-Space-logo.png">
+</div>
+<div class = "dropdown">
+    <img id = "profilephoto" src = "https://image.flaticon.com/icons/svg/1171/1171375.svg">
+    <div id = "idnumber">
+    13245643
+    </div>
+    <img id = "dropbtn" src = "https://static.thenounproject.com/png/551749-200.png">
+</div>
+<div class = "content" id = "content">
+    <div class = "icons">
+        <img id = "mainimg" src = "https://image.flaticon.com/icons/svg/1171/1171375.svg">
+        <div class = "iconoptions">
+            <img id = "1" src = "https://image.flaticon.com/icons/svg/1171/1171377.svg" onclick = "setprofile(1)">
+            <img id = "2" src = "https://image.flaticon.com/icons/svg/1171/1171369.svg" onclick = "setprofile(2)">
+            <img id = "3" src = "https://image.flaticon.com/icons/svg/1171/1171366.svg" onclick = "setprofile(3)"> 
+            <img id = "4" src = "https://image.flaticon.com/icons/svg/1171/1171367.svg" onclick = "setprofile(4)">
+            <img id = "5" src = "https://image.flaticon.com/icons/svg/1171/1171374.svg" onclick = "setprofile(5)">
+            <img id = "6" src = "https://image.flaticon.com/icons/svg/1171/1171368.svg" onclick = "setprofile(6)">
+        </div>
+    </div>
+    <div class = "changeid">
+        <div class = "idfield">12345434</div>
+        <img id = "die" src = "https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/dice-icon-18-256.png" onclick = "roll()">
+    </div>
+    <div class = "premium">
+        <p>UPGRADE TO PREMIUM</p>
+    </div>
+</div>
+
+</div>
+</div>
+
+<div id="tester"></div>
+<!-- END HEADER BAR -->
+
+<div> 
+<h2 id="subheader"> Big News </h2>
+</div>
+
+<div class="background-box">
+    <img id="image1" src="https://cnet1.cbsistatic.com/img/O7zvDASt4QXEqiAfmn7k0TPTP1Q=/2019/07/30/16333d23-2f38-4b6a-9d36-d67bdb6c0ea4/45-samsung-galaxy-watch-active-2.jpg">
+    <h3 id="title1"><a href="https://www.cnet.com/news/galaxy-watch-active-2-has-an-ecg-feature-still-cheaper-than-the-apple-watch/"> Galaxy Watch Active 2 has an ECG feature, still cheaper than the Apple Watch </a></h3>
+    <p id="subtitle1"> CNET - 8/5/2019 </p>
+</div>
+
+<div class="background-box">
+    <img id="image2" src="https://cdn.vox-cdn.com/thumbor/ski4rGMH1z2lY5JIzJbpNc1OqEs=/0x0:2040x1360/1820x1213/filters:focal(755x509:1081x835):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/64914702/vpavic_190711_3549_0014.0.jpg">
+    <h3 id="title2"><a href="https://www.theverge.com/good-deals/2019/8/5/20754827/macbook-air-2019-true-tone-display-best-buy-discount-deal-sale"> At $200 off, the latest MacBook Air is an even better deal at Best Buy </a></h3>
+    <p id="subtitle2"> The Verge - 8/5/2019 </p>
+</div>
+
+<div class="background-box">
+    <img id="image3" src="https://www.imore.com/sites/imore.com/files/styles/xlarge/public/article_images/2016/04/amazon-echo-dot-14new.jpg?itok=sXzgtdl6">
+    <h3 id="title3"><a href="https://www.cnn.com/2019/08/05/tech/alexa-amazon-human-voice-review/index.html"> How to stop your Alexa voice recordings from being reviewed by a human </a></h3>
+    <p id="subtitle3"> CNN - 8/5/2019 </p>
+</div>
+
+<div class="background-box">
+    <img id="image4" src="https://o.aolcdn.com/images/dims?quality=85&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D1600%252C1000%252C0%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C1000%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-uploaded-images%252F2019-08%252F7ecacaa0-b78a-11e9-8fff-818d3768c5f6%26client%3Da1acac3e1b3290917d92%26signature%3Daec5979cca4079722a061a3019689608a09eecfc&client=amp-blogside-v2&signature=5aecb483b82942e2eabaae5b5cdbe19f61f90f6c">
+    <h3 id="title4"><a href="https://www.engadget.com/2019/08/05/asus-zenfone-6-on-sale-us/?guccounter=1&guce_referrer=aHR0cHM6Ly9uZXdzLmdvb2dsZS5jb20v&guce_referrer_sig=AQAAACVU1IgmsqYesj2egFh_lNHjC2bJsYRHA6gcoli4ETZvNStpbxOPEGvxB4Wis5EMyYpDp21HPYLPXdTlCS0-upPicQW1rcngJYW5-IwMWLkAC1wZud-k604o8wmbk2s1Yo3UYQZ6XVHRaYrWD8wSeQCkV3_1HfGrsBCLHBhei2w2"> ASUS' camera-flipping ZenFone 6 goes on sale in the US </a></h3>
+    <p id="subtitle4"> Engadget - 8/5/2019 </p>
+</div>
+
+<div class="background-box">
+    <img id="image5" src="https://venturebeat.com/wp-content/uploads/2017/10/oculus_go.png?w=1200&strip=all">
+    <h3 id="title5"><a href="https://venturebeat.com/2019/08/05/xiaomi-reportedly-disbands-mi-vr-team-but-facebook-is-still-backing-oculus-go/"> Xiaomi reportedly disbands Mi VR team, but Facebook is still backing Oculus Go </a></h3>
+    <p id="subtitle5"> Venture Blood - 8/5/2019 </p>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-storage.js"></script>
+<script src="bigtechindex.js"></script>
+
+</body>
+</html>
