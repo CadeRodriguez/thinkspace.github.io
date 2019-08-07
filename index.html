@@ -1,67 +1,135 @@
-<!DOCTYPE html>
-<html>
-<head profile="https://i.ibb.co/KVYHtrX/Think-Space-logo.png">
-    <title>Welcome-Thinkspace</title>
-    <link rel="icon" type="image/png" href="https://i.ibb.co/KVYHtrX/Think-Space-logo.png">
+//configure firebase
+var firebaseConfig = {
+    apiKey: "AIzaSyCqZk2mo49EHc39H-p4HTLJLD-47yHb0zA",
+    authDomain: "thinkspace-86dba.firebaseapp.com",
+    databaseURL: "https://thinkspace-86dba.firebaseio.com",
+    projectId: "thinkspace-86dba",
+    storageBucket: "thinkspace-86dba.appspot.com",
+    messagingSenderId: "519498524544",
+    appId: "1:519498524544:web:32100239d99f92d4"
+  };
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    
-    <div class="headerbar">
-        <div class="header">
-            <h1>Thinkspace</h1>
-            <img src="https://i.ibb.co/KVYHtrX/Think-Space-logo.png">
-        </div>
-    </div>
-    <div class="welcome"><p>Welcome!</p></div>
-    
-    
-    <div class="loginbigbox">
-        <h2 class="log">Log In</h2>
-        
-        <form id="logformm">
-            <div class="login">
-                Phone number:   <input type="text" id="l_phone">
-                <br><br>Password:   <input type="password" id="l_pass">
-                <br><br><input type="submit" value="Log In" id="l_submit">
-            </div>
-        </form>
-    </div>
-    
-<div class="signupbigbox">
-    <h2 class="sign">Sign Up</h2>
-    
-    <form id="signformm">
-    <div class="signup">
-        Phone number:
-            <input type="text" id="s_phone">
-        <select id = "carrier">
-            <option value = "0">Carrier</option>
-            <option value = "@txt.att.net">AT&T</option>
-            <option value = "@messaging.sprintpcs.com">Sprint</option>
-            <option value = "@vtext.com">Verizon Wireless</option>
-            <option value = "@tmomail.net">T-Mobile</option>
-            <option value = "@sms.mycricket.com"> Cricket </option>
-        </select>
-    <br><br>Password: 
-    <input type="password" id="s_pass">
-    <br><br>Re-enter password:
-    <input type="password" id="s_confirm">
-    <br><br><input type="submit" value="Sign Up" id="s_submit">
-    </div>
-    </form>
-</div>
+  firebase.initializeApp(firebaseConfig);
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-storage.js"></script>
-<script src="index.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js">
-</script>
+var db = firebase.firestore();
 
-</body>
-</html>
+//set variables
+var signPhone = '', signPass = '', signConfirm = '', confirmWorking, textNumber, createdID;
+
+/* SmtpJS.com - v3.0.0 */
+var Email = {
+    send: function(a) {
+        return new Promise(function(n, e) {
+            a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send";
+            var t = JSON.stringify(a);
+            Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function(e) {
+                n(e)
+            })
+        })
+    },
+    ajaxPost: function(e, n, t) {
+        var a = Email.createCORSRequest("POST", e);
+        a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function() {
+            var e = a.responseText;
+            null != t && t(e)
+        }, a.send(n)
+    },
+    ajax: function(e, n) {
+        var t = Email.createCORSRequest("GET", e);
+        t.onload = function() {
+            var e = t.responseText;
+            null != n && n(e)
+        }, t.send()
+    },
+    createCORSRequest: function(e, n) {
+        var t = new XMLHttpRequest;
+        return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t
+    }
+};
+
+//SIGN UP
+//Defining all parts of database save before actual save function
+
+
+//CONFIRM ACCOUNT
+function verifyConfirm(signpass, confirmpass) {
+    //shake if false
+    if (signpass != confirmpass) {
+        document.getElementById('s_confirm').classList.add('shake');
+        var confirmWorking = false;
+    } else {
+        var confirmWorking = true;
+    };
+};
+
+//CREATE ID (set id)
+function createID() {
+    createdID = Math.floor(Math.random() * 899999999) + 100000000;
+    createdID = createdID.toString();
+    console.log(createdID);
+};
+
+//SEND A TEXT (set textNumber)
+function sendText(carrier){
+
+    var signPhone = document.getElementById('s_phone').value;
+    console.log("confirmation: sendText");
+    textNumber = signPhone.concat(carrier);
+
+    //email confirmation
+    console.log("Email will be sent to: " + textNumber);
+
+    //send actual email
+    Email.send({
+        SecureToken : "25c3508f-af4a-4f78-809f-9d6197e1785f",
+        To : textNumber,
+        From : "sarahikogan@gmail.com",
+        Subject: 'Welcome to Thinkspace!',
+        Body : "Welcome to Thinkspace! Your user ID is " + createdID + "!"
+    }).then(
+      message => alert(message)
+    );
+};
+
+//form
+$('#signformm').submit(function(e) {
+    e.preventDefault();
+    
+    //confirm
+    console.log("confirmation: signform");
+
+    var carrier = document.getElementById('carrier').value;
+    var signPhone = document.getElementById('s_phone').value;
+    var signPass = document.getElementById('s_pass').value;
+    var signConfirm = document.getElementById('s_confirm').value;
+
+    console.log("Sign phone when form submitted: " + signPhone);
+    //check that pass and confirm are the same
+    verifyConfirm(signPass, signConfirm);
+    createID();
+
+    //if pass != confirm - shake, else send the text to carrier
+    if (confirmWorking = false) {
+        setTimeout(function() { document.getElementById('s_confirm').classList.remove('shake'); }, 500);
+        console.log("verifyConfirm not run");
+    } else {
+        sendText(carrier);
+        console.log("carrier sent");
+    };
+
+    console.log("textNumber: " + textNumber);
+    saveNewAccount(textNumber, signPass);
+});
+
+//SAVE ACCOUNT INFO TO DATABASE
+
+function saveNewAccount(phone, password) {
+
+    var user = createdID;
+    
+    db.collection("profiles").doc(user).set({
+        phone: phone,
+        password: password,
+        id: createdID
+    });
+};
