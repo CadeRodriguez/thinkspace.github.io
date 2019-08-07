@@ -123,6 +123,23 @@ function premium() {
 	alert('Thinkspace Premium is coming soon!');
 }
 
+//LINKS
+function politicschoose() {
+	window.location.replace("../PoliticsChoose/pchooseindex.html");
+};
+
+function sportschoose() {
+	window.location.replace("../SportsChoose/schooseindex.html");
+};
+
+function entchoose() {
+	window.location.replace("../EntertainmentChoose/echooseindex.html");
+};
+
+function techchoose() {
+	window.location.replace("../TechChoose/tchooseindex.html");
+};
+
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
 content.style.display = "none";
