@@ -23,33 +23,44 @@
         
         <form id="logformm">
             <div class="login">
-                Phone number:   <input type="text" id="l_phone" />
-                <br><br>Password:   <input type="password" id="l_pass" />
-                <br><br><input type="submit" value="Log In" id="l_submit" />
+                Phone number:   <input type="text" id="l_phone">
+                <br><br>Password:   <input type="password" id="l_pass">
+                <br><br><input type="submit" value="Log In" id="l_submit">
             </div>
         </form>
     </div>
     
-    <div class="signupbigbox">
-        <h2 class="sign">Sign Up</h2>
-        
-        <form id="signformm">
-            <div class="signup">
-                Phone number:   <input type="text" id="s_phone" />
-                <br><br>Password:   <input type="password" id="s_pass" />
-                <br><br>Re-enter password:   <input type="password" id="s_confirm" />
-                <br><br><input type="submit" value="Sign Up" id="s_submit" />
-            </div>
-        </form>
+<div class="signupbigbox">
+    <h2 class="sign">Sign Up</h2>
+    
+    <form id="signformm">
+    <div class="signup">
+        Phone number:
+            <input type="text" id="s_phone">
+        <select id = "carrier">
+            <option value = "0">Carrier</option>
+            <option value = "@txt.att.net">AT&T</option>
+            <option value = "@messaging.sprintpcs.com">Sprint</option>
+            <option value = "@vtext.com">Verizon Wireless</option>
+            <option value = "@tmomail.net">T-Mobile</option>
+        </select>
+    <br><br>Password: 
+    <input type="password" id="s_pass">
+    <br><br>Re-enter password:
+    <input type="password" id="s_confirm">
+    <br><br><input type="submit" value="Sign Up" id="s_submit">
     </div>
+    </form>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-storage.js"></script>
 <script src="index.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
 
 </body>
 </html>
-
