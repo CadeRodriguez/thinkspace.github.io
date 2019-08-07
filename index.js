@@ -14,7 +14,7 @@ var firebaseConfig = {
 var db = firebase.firestore();
 
 //set variables
-var signPhone = '', signPass = '', signConfirm = '', confirmWorking, textNumber, createdID;
+var signPhone = '', signPass = '', signConfirm = '', confirmWorking, confirmText, textNumber, createdID;
 
 /* SmtpJS.com - v3.0.0 */
 var Email = {
@@ -56,9 +56,9 @@ function verifyConfirm(signpass, confirmpass) {
     //shake if false
     if (signpass != confirmpass) {
         document.getElementById('s_confirm').classList.add('shake');
-        var confirmWorking = false;
+        confirmWorking = false;
     } else {
-        var confirmWorking = true;
+        confirmWorking = true;
     };
 };
 
@@ -87,10 +87,10 @@ function sendText(carrier){
         Subject: 'Welcome to Thinkspace!',
         Body : "Welcome to Thinkspace! Your user ID is " + createdID + "!"
     }).then(
-      message => alert(message)
-    );
-};
+      message => alert(message));
 
+    confirmText = true;
+};
 //form
 $('#signformm').submit(function(e) {
     e.preventDefault();
@@ -112,13 +112,20 @@ $('#signformm').submit(function(e) {
     if (confirmWorking = false) {
         setTimeout(function() { document.getElementById('s_confirm').classList.remove('shake'); }, 500);
         console.log("verifyConfirm not run");
-    } else {
+    } else if (confirmWorking = true) {
         sendText(carrier);
         console.log("carrier sent");
     };
 
     console.log("textNumber: " + textNumber);
     saveNewAccount(textNumber, signPass);
+
+    console.log("confirmWorking: " + confirmWorking);
+    console.log("confirmText: " + confirmText);
+    if (confirmWorking && confirmText) {
+        window.location.replace("InfoPage/infoindex.html")
+        console.log('yes');
+    }
 });
 
 //SAVE ACCOUNT INFO TO DATABASE
