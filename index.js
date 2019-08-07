@@ -14,7 +14,7 @@ var firebaseConfig = {
 var db = firebase.firestore();
 
 //set variables
-var signPhone = '', signPass = '', signConfirm = '', confirmWorking, textNumber;
+var signPhone = '', signPass = '', signConfirm = '', confirmWorking, textNumber, createdID;
 
 /* SmtpJS.com - v3.0.0 */
 var Email = {
@@ -50,6 +50,7 @@ var Email = {
 //SIGN UP
 //Defining all parts of database save before actual save function
 
+
 //CONFIRM ACCOUNT
 function verifyConfirm(signpass, confirmpass) {
     //shake if false
@@ -61,15 +62,18 @@ function verifyConfirm(signpass, confirmpass) {
     };
 };
 
+//CREATE ID (set id)
+function createID() {
+    createdID = Math.floor(Math.random() * 899999999) + 100000000;
+    createdID = createdID.toString();
+    console.log(createdID);
+};
+
 //SEND A TEXT (set textNumber)
 function sendText(carrier){
 
     var signPhone = document.getElementById('s_phone').value;
     console.log("confirmation: sendText");
-
-    //set textNumber variable
-    console.log("sendText: carrier: " + carrier);
-
     textNumber = signPhone.concat(carrier);
 
     //email confirmation
@@ -81,15 +85,10 @@ function sendText(carrier){
         To : textNumber,
         From : "sarahikogan@gmail.com",
         Subject: 'Welcome to Thinkspace!',
-        Body : "Welcome to Thinkspace!"
+        Body : "Welcome to Thinkspace! Your user ID is " + createdID + "!"
     }).then(
       message => alert(message)
     );
-};
-
-//CREATE ID (set id)
-function createId() {
-    return Math.floor(Math.random() * 899999999) + 100000000;
 };
 
 //form
@@ -107,6 +106,7 @@ $('#signformm').submit(function(e) {
     console.log("Sign phone when form submitted: " + signPhone);
     //check that pass and confirm are the same
     verifyConfirm(signPass, signConfirm);
+    createID();
 
     //if pass != confirm - shake, else send the text to carrier
     if (confirmWorking = false) {
@@ -118,18 +118,18 @@ $('#signformm').submit(function(e) {
     };
 
     console.log("textNumber: " + textNumber);
-    console.log("signPass: " + signPass);
     saveNewAccount(textNumber, signPass);
 });
 
 //SAVE ACCOUNT INFO TO DATABASE
 
 function saveNewAccount(phone, password) {
-    db.collection("profiles").add({
+
+    var user = createdID;
+    
+    db.collection("profiles").doc(user).set({
         phone: phone,
         password: password,
-        id: createId(),
-        photo: 1
+        id: createdID
     });
-    console.log(doc.id);
 };
