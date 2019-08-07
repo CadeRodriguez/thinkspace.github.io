@@ -280,4 +280,5 @@ p {
     top:95%;
     right:50px;
     font-size: calc(2vw - 5px);
+    color: black;
 }
