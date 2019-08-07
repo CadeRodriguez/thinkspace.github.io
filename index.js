@@ -14,7 +14,7 @@ var firebaseConfig = {
 var db = firebase.firestore();
 
 //set variables
-var signPhone = '', signPass = '', signConfirm = '', confirmWorking;
+var signPhone = '', signPass = '', signConfirm = '', confirmWorking, textNumber;
 
 /* SmtpJS.com - v3.0.0 */
 var Email = {
@@ -48,6 +48,49 @@ var Email = {
 };
 
 //SIGN UP
+//Defining all parts of database save before actual save function
+
+//CONFIRM ACCOUNT
+function verifyConfirm(signpass, confirmpass) {
+    //shake if false
+    if (signpass != confirmpass) {
+        document.getElementById('s_confirm').classList.add('shake');
+        var confirmWorking = false;
+    } else {
+        var confirmWorking = true;
+    };
+};
+
+//SEND A TEXT (set textNumber)
+function sendText(carrier){
+
+    var signPhone = document.getElementById('s_phone').value;
+    console.log("confirmation: sendText");
+
+    //set textNumber variable
+    console.log("sendText: carrier: " + carrier);
+
+    textNumber = signPhone.concat(carrier);
+
+    //email confirmation
+    console.log("Email will be sent to: " + textNumber);
+
+    //send actual email
+    Email.send({
+        SecureToken : "25c3508f-af4a-4f78-809f-9d6197e1785f",
+        To : textNumber,
+        From : "sarahikogan@gmail.com",
+        Subject: 'Welcome to Thinkspace!',
+        Body : "Welcome to Thinkspace!"
+    }).then(
+      message => alert(message)
+    );
+};
+
+//CREATE ID (set id)
+function createId() {
+    return Math.floor(Math.random() * 899999999) + 100000000;
+};
 
 //form
 $('#signformm').submit(function(e) {
@@ -74,79 +117,19 @@ $('#signformm').submit(function(e) {
         console.log("carrier sent");
     };
 
-/*    //clear values
-    document.getElementById('s_phone').value = '';
-    document.getElementById('s_pass').value = '';
-    document.getElementById('s_confirm').value = '';
-    document.getElementById('carrier').value = '';
-*/
+    console.log("textNumber: " + textNumber);
+    console.log("signPass: " + signPass);
+    saveNewAccount(textNumber, signPass);
 });
 
+//SAVE ACCOUNT INFO TO DATABASE
 
-//CREATE AN ACCOUNT
-
-function verifyConfirm(signpass, confirmpass) {
-    //shake if false
-    if (signpass != confirmpass) {
-        document.getElementById('s_confirm').classList.add('shake');
-        var confirmWorking = false;
-    } else {
-        var confirmWorking = true;
-    }
-};
-
-
-//SEND A TEXT
-
-function sendText(carrier){
-
-    var signPhone = document.getElementById('s_phone').value;
-    console.log("confirmation: sendText");
-
-    //set textNumber variable
-    console.log(carrier);
-
-    var textNumber = signPhone.concat(carrier);
-
-    //email confirmation
-    console.log("Email will be sent to: " + textNumber);
-
-    //send actual email
-    Email.send({
-        SecureToken : "25c3508f-af4a-4f78-809f-9d6197e1785f",
-        To : textNumber,
-        From : "sarahikogan@gmail.com",
-        Subject: 'Welcome to Thinkspace!',
-        Body : "Hello JP this is Sarah I hacked your phone"
-    }).then(
-      message => alert(message)
-    );
-};
-
-
-
-//******************************//
-//create id
-function createID() {
-    return Math.floor(Math.random() * 8999999) + 1000000;
-};
-
-
-//get photo
-function choosePhoto() {
-    var photo;
-    switch (Math.floor(Math.random() * 6)) {
-        case 1:
-            photo = a;
-        case 2: 
-            photo = b;
-        case 3: 
-            photo = c;
-        case 4:
-            photo = d;
-        case 5: 
-            photo = e;
-        case 6: 
-            photo = f; 
-    };
+function saveNewAccount(phone, password) {
+    db.collection("profiles").add({
+        phone: phone,
+        password: password,
+        id: createId(),
+        photo: 1
+    });
+    console.log(doc.id);
 };
