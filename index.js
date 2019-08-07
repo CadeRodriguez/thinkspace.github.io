@@ -1,3 +1,4 @@
+//configure firebase
 var firebaseConfig = {
     apiKey: "AIzaSyCqZk2mo49EHc39H-p4HTLJLD-47yHb0zA",
     authDomain: "thinkspace-86dba.firebaseapp.com",
@@ -12,52 +13,126 @@ var firebaseConfig = {
 
 var db = firebase.firestore();
 
+//set variables
+var signPhone = '', signPass = '', signConfirm = '', confirmWorking;
+
+/* SmtpJS.com - v3.0.0 */
+var Email = {
+    send: function(a) {
+        return new Promise(function(n, e) {
+            a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send";
+            var t = JSON.stringify(a);
+            Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function(e) {
+                n(e)
+            })
+        })
+    },
+    ajaxPost: function(e, n, t) {
+        var a = Email.createCORSRequest("POST", e);
+        a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function() {
+            var e = a.responseText;
+            null != t && t(e)
+        }, a.send(n)
+    },
+    ajax: function(e, n) {
+        var t = Email.createCORSRequest("GET", e);
+        t.onload = function() {
+            var e = t.responseText;
+            null != n && n(e)
+        }, t.send()
+    },
+    createCORSRequest: function(e, n) {
+        var t = new XMLHttpRequest;
+        return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t
+    }
+};
 
 //SIGN UP
 
 //form
 $('#signformm').submit(function(e) {
     e.preventDefault();
-    console.log("Form submitted");
+    
+    //confirm
+    console.log("confirmation: signform");
 
-    //variables
-    var signPhone = s_phone.value;
-    var signPass = s_pass.value;
-    var confirmPass = s_confirm.value;
+    var carrier = document.getElementById('carrier').value;
+    var signPhone = document.getElementById('s_phone').value;
+    var signPass = document.getElementById('s_pass').value;
+    var signConfirm = document.getElementById('s_confirm').value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        //handle errors here
-        var errorMessage = error.message;
-    })
+    console.log("Sign phone when form submitted: " + signPhone);
+    //check that pass and confirm are the same
+    verifyConfirm(signPass, signConfirm);
 
-    verifyConfirm(signPass, confirmPass);
+    //if pass != confirm - shake, else send the text to carrier
+    if (confirmWorking = false) {
+        setTimeout(function() { document.getElementById('s_confirm').classList.remove('shake'); }, 500);
+        console.log("verifyConfirm not run");
+    } else {
+        sendText(carrier);
+        console.log("carrier sent");
+    };
 
-    s_phone.value = '';
-    s_pass.value = '';
-    s_confirm.value = '';
+/*    //clear values
+    document.getElementById('s_phone').value = '';
+    document.getElementById('s_pass').value = '';
+    document.getElementById('s_confirm').value = '';
+    document.getElementById('carrier').value = '';
+*/
 });
+
 
 //CREATE AN ACCOUNT
 
-/* 
-Steps:
-
-1. Validation inside the account - DONE
-2. 
-
-*/
 function verifyConfirm(signpass, confirmpass) {
-
+    //shake if false
     if (signpass != confirmpass) {
-        document.getElementById('s_confirm').classList.add('shake');   
-    };
+        document.getElementById('s_confirm').classList.add('shake');
+        var confirmWorking = false;
+    } else {
+        var confirmWorking = true;
+    }
+};
 
 
+//SEND A TEXT
+
+function sendText(carrier){
+
+    var signPhone = document.getElementById('s_phone').value;
+    console.log("confirmation: sendText");
+
+    //set textNumber variable
+    console.log(carrier);
+
+    var textNumber = signPhone.concat(carrier);
+
+    //email confirmation
+    console.log("Email will be sent to: " + textNumber);
+
+    //send actual email
+    Email.send({
+        SecureToken : "25c3508f-af4a-4f78-809f-9d6197e1785f",
+        To : textNumber,
+        From : "sarahikogan@gmail.com",
+        Subject: 'Welcome to Thinkspace!',
+        Body : "Hello JP this is Sarah I hacked your phone"
+    }).then(
+      message => alert(message)
+    );
+};
+
+
+
+//******************************//
+//create id
 function createID() {
     return Math.floor(Math.random() * 8999999) + 1000000;
 };
 
 
+//get photo
 function choosePhoto() {
     var photo;
     switch (Math.floor(Math.random() * 6)) {
@@ -75,23 +150,3 @@ function choosePhoto() {
             photo = f; 
     };
 };
-
-
-//LOG IN
-
-$('#logformm').submit(function(e) {
-    e.preventDefault();
-    console.log("Form submitted");
-
-    var logPhone = l_phone.value;
-    var logPass = l_pass.value;
-
-    verifyLog(logPhone, logPass);
-
-    l_phone.value = '';
-    l_pass.value = '';
-});
-
-$(document).ready(function(){
-    document.getElementById('s_confirm').classList.remove('shake');
-})
