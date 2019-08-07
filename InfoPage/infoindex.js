@@ -1,3 +1,3 @@
 function redirect() {
-	window.location.replace("../../index.html")
+	window.location.replace("../TopicPage/topicsindex.html")
 };
