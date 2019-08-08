@@ -3,17 +3,17 @@ body {
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(to left, white 15%, #3291a8 15% 65%, #3291a8 65% 85%, white 85% );
-    width:100%;
+    width: 100%;
 }
 
 a {
-    margin:0;
+    margin: 0;
 }
 
 h4 {
-    float:left;
+    float: left;
     position: relative;
-    top:-10px;
+    top: -10px;
 }
 
 
@@ -139,7 +139,7 @@ p {
     margin: 5% 10%;
 }
 
-.idfield {
+#idfield {
     background-color: white;
     float: left;
     width: 70%;
@@ -185,7 +185,7 @@ p {
         color: white;
     }
 
-    
+
 /*this is my(sage) code ladies and gents*/
 .headerbar {
     background-color: #a9b4ba;
@@ -200,11 +200,11 @@ p {
 
 .backbutton {
     font-size: 20px;
-    float:left;
+    float: left;
 }
 
 iframe {
-    margin-left:25%;
+    margin-left: 25%;
 }
 
 h1 {
@@ -216,12 +216,11 @@ h1 {
     position: relative;
     left: 38%;
     top: 35%;
-    width: 100%; 
+    width: 100%;
 }
 
 .comment_input {
     display: flex;
-    flex-direction: column;
     margin-top: .75%;
     margin-bottom: 1%;
     margin-left: 22%;
@@ -231,22 +230,17 @@ h1 {
     padding: 1%;
     border-radius: 4px;
     text-align: left;
-    padding-left: 5%;
+    /*overflow-y: auto;
+    /*overflow-y: auto;*/
 }
 
-p:a {
-    text-align: right;
+
+#comment {
+    padding: 1%;
+    height: 20%;
+    left: -20px;
 }
 
-#comment{
-    padding:1%;
-    width:20%;
-    height:20%;
-}
-
-.personalidnumber {   /*not working rn, fix later*/
-    font-size: 15%;
-}
 
 #picsubmit {
     display: inline-block;
@@ -257,3 +251,23 @@ p:a {
     position: relative;
 }
 
+
+.commenticon {
+    max-height: 5%;
+    max-width: 5%;
+    float: left;
+}  
+
+.commentnumber {
+    top: -20px;
+    font-size: 10px;
+    margin-right: 2%;
+}
+
+#x {
+    position: absolute;
+    right: 23%;
+    font-size: 3%;
+    border-radius: 4px;
+    background-color: #a9b4ba;
+}
