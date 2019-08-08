@@ -96,6 +96,14 @@ function setprofile(photo) {
     };
 };
 
+//LINKS
+function techlive() {
+    window.location.replace("../APIFeeds/Tech/techindex.html");
+};
+
+function techbig() {
+    window.location.replace("../BigNewsFeeds/Tech/bigtechindex.html");  
+};
 
 //SAVE TO DATABASE
 function savePhotoToDatabase(photo) {
