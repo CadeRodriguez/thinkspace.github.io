@@ -16,6 +16,7 @@ body {
     margin-left: 350px;
     margin-right: 350px;
     margin-bottom: 40px;
+    border-radius: 4px;
 }
 
 #subheader {
@@ -41,6 +42,7 @@ a:hover {
 #image1 {
     height: 120px;
     width: 200px;
+    border-radius:4px;
 }
 
 #title1 {
@@ -64,6 +66,7 @@ a:hover {
 #image2 {
     height: 120px;
     width: 200px;
+    border-radius: 4px;
 }
 
 #title2 {
@@ -87,6 +90,7 @@ a:hover {
 #image3 {
     height: 120px;
     width: 200px;
+    border-radius:4px;
 }
 
 #title3 {
@@ -110,6 +114,7 @@ a:hover {
 #image4 {
     height: 120px;
     width: 200px;
+    border-radius: 4px;
 }
 
 #title4 {
@@ -133,6 +138,7 @@ a:hover {
 #image5 {
     height: 120px;
     width: 200px;
+    border-radius: 4px;
 }
 
 #title5 {
