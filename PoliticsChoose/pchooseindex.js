@@ -97,6 +97,15 @@ function setprofile(photo) {
 };
 
 
+//LINKS
+function politicslive() {
+    window.location.replace("../APIFeeds/Politics/politicsindex.html");
+};
+
+function politicsbig() {
+    window.location.replace("../BigNewsFeeds/Politics/bigpoliticsindex.html");  
+};
+
 //SAVE TO DATABASE
 function savePhotoToDatabase(photo) {
     doc = db.collection("users").set({
