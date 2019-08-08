@@ -96,6 +96,14 @@ function setprofile(photo) {
     };
 };
 
+//LINKS
+function sportslive() {
+    window.location.replace("../APIFeeds/Sports/sportsindex.html");
+};
+
+function sportsbig() {
+    window.location.replace("../BigNewsFeeds/Sports/bigsportsindex.html");  
+};
 
 //SAVE TO DATABASE
 function savePhotoToDatabase(photo) {
