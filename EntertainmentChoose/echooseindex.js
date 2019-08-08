@@ -96,6 +96,14 @@ function setprofile(photo) {
     };
 };
 
+//LINKS
+function entlive() {
+    window.location.replace("../APIFeeds/Entertainment/entertainmentindex.html");
+};
+
+function entbig() {
+    window.location.replace("../BigNewsFeeds/Entertainment/bigentertainmentindex.html");  
+};
 
 //SAVE TO DATABASE
 function savePhotoToDatabase(photo) {
