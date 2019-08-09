@@ -140,15 +140,15 @@ function savePhotoToDatabase(photo) {
 }
 
 function premium() {
-	window.location.replace("PremiumPage/premiumindex.html");
+	window.location.replace("../../../PremiumPage/premiumindex.html");
 }
 
-function politicslive() {
-	window.location.replace("../APIFeeds/Politics/politicsindex.html");
+function entlive() {
+	window.location.replace("../APIFeeds/Entertainment/entertainmentindex.html");
 };
 
-function politicsbig() {
-	window.location.replace("../BigNewsFeeds/Politics/bigpoliticsindex.html");
+function entbig() {
+	window.location.replace("../BigNewsFeeds/Entertainment/bigentertainmentindex.html");
 };
 
 // On ready - dropdown display to none, so the value isn't undefined
