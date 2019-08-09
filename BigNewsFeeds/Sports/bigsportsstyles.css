@@ -306,7 +306,7 @@ p {
     margin:5% 10%;
 }
 
-.idfield {
+#idfield {
     background-color:white;
     float:left;
     width:70%;
