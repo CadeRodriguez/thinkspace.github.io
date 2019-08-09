@@ -148,7 +148,7 @@ function politicslive() {
 };
 
 function politicsbig() {
-	window.location.replace("..BigNewsFeeds/Politics/bigpoliticsindex.html");
+	window.location.replace("../BigNewsFeeds/Politics/bigpoliticsindex.html");
 };
 
 // On ready - dropdown display to none, so the value isn't undefined
