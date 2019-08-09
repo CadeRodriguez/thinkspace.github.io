@@ -5,6 +5,22 @@ body {
     width:100%;
 }
 
+  /* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: #30abdf;
+}
+
+
 /* Header */
 
 h1 {
