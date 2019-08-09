@@ -159,6 +159,14 @@ function techchoose() {
 	window.location.replace("../TechChoose/tchooseindex.html");
 };
 
+function entlive() {
+	window.location.replace("../APIFeeds/Entertainment/entertainmentindex.html");
+};
+
+function entbig() {
+	window.location.replace("../BigNewsFeeds/Entertainment/bigentertainmentindex.html");
+};
+
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
 	content.style.display = "none";
