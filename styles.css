@@ -87,7 +87,8 @@ input {
 #l_submit, #s_submit {
     background-color: #192028;
     color: white;
-    height:30px;
+    height:35px;
+    border-radius:4px;
 }
 /*SHAKE*/
 
