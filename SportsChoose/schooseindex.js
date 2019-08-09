@@ -143,11 +143,11 @@ function premium() {
 	window.location.replace("PremiumPage/premiumindex.html");
 }
 
-function politicslive() {
+function sportslive() {
 	window.location.replace("../APIFeeds/Sports/sportsindex.html");
 };
 
-function politicsbig() {
+function sportsbig() {
 	window.location.replace("../BigNewsFeeds/Sports/bigsportsindex.html");
 };
 
