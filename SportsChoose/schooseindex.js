@@ -142,12 +142,13 @@ function savePhotoToDatabase(photo) {
 function premium() {
 	window.location.replace("PremiumPage/premiumindex.html");
 }
-function sportslive() {
-	window.location.replace("../APIFeeds/Sports/sportsindex.html");
+
+function politicslive() {
+	window.location.replace("../APIFeeds/Politics/politicsindex.html");
 };
 
-function sportsbig() {
-	window.location.replace("../BigNewsFeeds/Sports/bigsportsindex.html");
+function politicsbig() {
+	window.location.replace("../BigNewsFeeds/Politics/bigpoliticsindex.html");
 };
 
 // On ready - dropdown display to none, so the value isn't undefined
