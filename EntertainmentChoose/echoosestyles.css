@@ -182,6 +182,7 @@ h1 {
 
     .topics div:not(.left):not(.right) {
         transition: all 0.2s ease-in-out;
+        cursor:pointer;
     }
 
     .topics div:hover:not(.left):not(.right) {
