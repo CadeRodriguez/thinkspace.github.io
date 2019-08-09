@@ -144,11 +144,11 @@ function premium() {
 }
 
 function politicslive() {
-	window.location.replace("../APIFeeds/Politics/politicsindex.html");
+	window.location.replace("../APIFeeds/Sports/sportsindex.html");
 };
 
 function politicsbig() {
-	window.location.replace("../BigNewsFeeds/Politics/bigpoliticsindex.html");
+	window.location.replace("../BigNewsFeeds/Sports/bigsportsindex.html");
 };
 
 // On ready - dropdown display to none, so the value isn't undefined
