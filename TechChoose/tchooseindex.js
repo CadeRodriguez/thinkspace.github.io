@@ -159,6 +159,13 @@ function techchoose() {
 	window.location.replace("../TechChoose/tchooseindex.html");
 };
 
+function techbig() {
+	window.location.replace("../BigNewsFeeds/Tech/bigtechindex.html");
+};
+
+function techlive() {
+	window.location.replace("../APIFeeds/Tech/techindex.html");
+};
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
 	content.style.display = "none";
