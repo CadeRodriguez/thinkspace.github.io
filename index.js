@@ -151,7 +151,7 @@ $('#logformm').submit(function(e) {
                 localStorage.setItem('logDocID', doc.id);
                 if (doc.data().password === logPass) {
                     localStorage.setItem('userID', doc.data().id);
-                    window.location.replace("../Topics2/topics2.html");
+                    window.location.replace("../TopicPage/topicsindex.html");
                 } else if (doc.data().password != logPass) {
                     alert('Your username and password do not match. Please try again.')
                 }
