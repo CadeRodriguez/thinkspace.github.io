@@ -139,7 +139,7 @@ function savePhotoToDatabase(photo) {
 }
 
 function premium() {
-	window.location.replace("PremiumPage/premiumindex.html");
+	window.location.replace("../../../PremiumPage/premiumindex.html");
 }
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
