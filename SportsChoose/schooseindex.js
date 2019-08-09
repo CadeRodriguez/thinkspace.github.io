@@ -159,6 +159,14 @@ function techchoose() {
 	window.location.replace("../TechChoose/tchooseindex.html");
 };
 
+function sportslive() {
+	window.location.replace("../APIFeeds/Sports/sportsindex.html");
+};
+
+function sportsbig() {
+	window.location.replace("../BigNewsFeeds/Sports/bigsportsindex.html");
+};
+
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
 	content.style.display = "none";
