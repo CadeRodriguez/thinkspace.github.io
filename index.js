@@ -109,7 +109,7 @@ $('#signformm').submit(function(e) {
     console.log("confirmWorking: " + confirmWorking);
     console.log("confirmText: " + confirmText);
     if (confirmWorking && confirmText) {
-        setTimeout(function() {window.location.replace("../InfoPage/infoindex.html"); }, 5000);
+        window.location.replace("../InfoPage/infoindex.html");
     }
 });
 
