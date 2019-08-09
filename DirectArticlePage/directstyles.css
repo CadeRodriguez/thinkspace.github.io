@@ -6,26 +6,15 @@ body {
     width: 100%;
 }
 
-  /* unvisited link */
-a:link {
-  color: black;
+a {
+    margin: 0;
 }
 
-/* visited link */
-a:visited {
-  color: black;
+h4 {
+    float: left;
+    position: relative;
+    top: -10px;
 }
-
-/* mouse over link */
-a:hover {
-  color: #30abdf;
-}
-
-h4{
-    float:left;
-    margin-top:10px;
-    margin-left: 10px;
-
 
 
 /*Header*/
