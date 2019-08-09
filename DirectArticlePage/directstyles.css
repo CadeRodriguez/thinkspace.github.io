@@ -6,9 +6,20 @@ body {
     width: 100%;
 }
 
-a {
-    margin: 0;
+  /* unvisited link */
+a:link {
+  color: black;
 }
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: #30abdf;
+
 
 h4 {
     float: left;
