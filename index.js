@@ -79,7 +79,7 @@ function sendText(carrier){
         To : textNumber,
         From : "sarahikogan@gmail.com",
         Subject: 'Welcome to Thinkspace!',
-        Body : "Welcome to Thinkspace! Your user ID is " + createdID + "!"
+        Body : "Your user ID is " + createdID + "!"
     }).then(
       message => alert(message));
 
