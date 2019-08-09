@@ -27,6 +27,12 @@ h1 {
     margin:0;
 }
 
+h4{
+    float:left;
+    margin-top:10px;
+    margin-left: 10px;
+}
+
 .headerbar {
     background-color: #a9b4ba;
     width:100%;
