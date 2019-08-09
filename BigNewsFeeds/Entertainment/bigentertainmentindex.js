@@ -11,7 +11,6 @@ appId: "1:519498524544:web:32100239d99f92d4"
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
-
 //--- COPY TO ALL ---//
 // set variables
 var dropbtn = document.getElementById("dropbtn");
@@ -140,25 +139,8 @@ function savePhotoToDatabase(photo) {
 }
 
 function premium() {
-	window.location.replace("PremiumPage/premiumindex.html");
+	window.location.replace("../../../PremiumPage/premiumindex.html");
 }
-//LINKS
-function politicschoose() {
-	window.location.replace("../PoliticsChoose/pchooseindex.html");
-};
-
-function sportschoose() {
-	window.location.replace("../SportsChoose/schooseindex.html");
-};
-
-function entchoose() {
-	window.location.replace("../EntertainmentChoose/echooseindex.html");
-};
-
-function techchoose() {
-	window.location.replace("../TechChoose/tchooseindex.html");
-};
-
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
 	content.style.display = "none";
