@@ -140,8 +140,24 @@ function savePhotoToDatabase(photo) {
 }
 
 function premium() {
-	window.location.replace("PremiumPage/premiumindex.html");
+	window.location.replace("../PremiumPage/premiumindex.html");
 }
+//LINKS
+function politicschoose() {
+	window.location.replace("../PoliticsChoose/pchooseindex.html");
+};
+
+function sportschoose() {
+	window.location.replace("../SportsChoose/schooseindex.html");
+};
+
+function entchoose() {
+	window.location.replace("../EntertainmentChoose/echooseindex.html");
+};
+
+function techchoose() {
+	window.location.replace("../TechChoose/tchooseindex.html");
+};
 
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
@@ -150,4 +166,3 @@ $(document).ready(function() {
 	document.getElementById('idnumber').innerHTML = userID;
 	document.getElementById("mainimg").src = logPhotoID;
 	document.getElementById('profilephoto').src = logPhotoID;
-});
