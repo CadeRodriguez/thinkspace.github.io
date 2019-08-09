@@ -125,7 +125,7 @@ h1 {
     margin: 5% 10%;
 }
 
-.idfield {
+#idfield {
     background-color: white;
     float: left;
     width: 70%;
@@ -182,6 +182,7 @@ h1 {
 
     .topics div:not(.left):not(.right) {
         transition: all 0.2s ease-in-out;
+        cursor:pointer;
     }
 
     .topics div:hover:not(.left):not(.right) {
