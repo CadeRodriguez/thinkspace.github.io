@@ -36,6 +36,8 @@ h1 {
 .header {
     width:225px;
     margin:auto;
+    position: relative;
+    top: -40px;
 }
 
 .header img { 
