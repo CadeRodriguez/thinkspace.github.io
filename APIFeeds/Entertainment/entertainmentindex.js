@@ -140,7 +140,7 @@ function savePhotoToDatabase(photo) {
 }
 
 function premium() {
-	window.location.replace("../PremiumPage/premiumindex.html");
+	window.location.replace("../../../PremiumPage/premiumindex.html");
 }
 //LINKS
 function politicschoose() {
