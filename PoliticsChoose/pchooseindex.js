@@ -159,6 +159,14 @@ function techchoose() {
 	window.location.replace("../TechChoose/tchooseindex.html");
 };
 
+function politicslive() {
+	window.location.replace("../APIFeeds/Politics/politicsindex.html");
+};
+
+function politicsbig() {
+	window.location.replace("..BigNewsFeeds/Politics/bigpoliticsindex.html");
+};
+
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
 	content.style.display = "none";
