@@ -26,10 +26,10 @@ h4{
     margin-left: 10px;
 }
 
-/* Header */
+/*Header*/
 
 h1 {
-    margin:0;
+    margin:0
 }
 
 .headerbar {
@@ -50,7 +50,7 @@ h1 {
     top:-40px;
 }
 
-/* DROPDOWN */
+/*DROPDOWN*/
 
 .dropdown {
     width:140px;
@@ -100,7 +100,7 @@ p {
     position:absolute;
     top:50px;
     right:1px;
-    height:193px;
+    height:210px;
     background-color:#192028;
     box-shadow:3px 3px 5px 5px rgba(0,0,0,.2);
     z-index:1;
@@ -148,7 +148,7 @@ p {
     margin:5% 10%;
 }
 
-.idfield {
+#idfield {
     background-color:white;
     float:left;
     width:70%;
@@ -172,16 +172,16 @@ p {
     background-color:#01A9E4;
     width:100%;
     position:relative;
-    top:29%;
+    top:35%;
     height:40px;
     transition:all 0.2s ease-in-out;
 }
 
 .premium p {
-    line-height:0;
     position:relative;
-    top:-10px;
-    left:13px;
+    top:-20px;
+    text-align:center;
+    font-size:15px;
 }
 
 .premium:hover {
@@ -192,8 +192,8 @@ p {
 .premium:active {
     background-color:#192028;
     color:white;
-
 }
+
 
 
 
