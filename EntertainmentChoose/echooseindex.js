@@ -12,6 +12,20 @@ appId: "1:519498524544:web:32100239d99f92d4"
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+// Your web app's Firebase configuration
+var firebaseConfig = {
+apiKey: "AIzaSyCqZk2mo49EHc39H-p4HTLJLD-47yHb0zA",
+authDomain: "thinkspace-86dba.firebaseapp.com",
+databaseURL: "https://thinkspace-86dba.firebaseio.com",
+projectId: "thinkspace-86dba",
+storageBucket: "thinkspace-86dba.appspot.com",
+messagingSenderId: "519498524544",
+appId: "1:519498524544:web:32100239d99f92d4"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+
 //--- COPY TO ALL ---//
 // set variables
 var dropbtn = document.getElementById("dropbtn");
@@ -166,6 +180,7 @@ function entlive() {
 function entbig() {
 	window.location.replace("../BigNewsFeeds/Entertainment/bigentertainmentindex.html");
 };
+
 
 // On ready - dropdown display to none, so the value isn't undefined
 $(document).ready(function() {
