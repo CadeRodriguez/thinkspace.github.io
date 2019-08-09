@@ -80,8 +80,7 @@ function sendText(carrier){
         From : "sarahikogan@gmail.com",
         Subject: 'Welcome to Thinkspace!',
         Body : "Your user ID is " + createdID + "!"
-    }).then(
-      message => alert(message));
+    });
 
     confirmText = true;
 };
