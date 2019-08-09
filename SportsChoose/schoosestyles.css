@@ -182,7 +182,6 @@ h1 {
 
     .topics div:not(.left):not(.right) {
         transition: all 0.2s ease-in-out;
-        cursor: pointer;
     }
 
     .topics div:hover:not(.left):not(.right) {
@@ -215,12 +214,13 @@ h1 {
 
 /*background colors*/
 .colorbar {
-    background-color: #056FBE;
+    background-color: #0092AB;
     width: 80%;
-    height: 100vh;
-    margin-left: 10%;
-    position: absolute;
-    top: 63px;
+    height:100vh;
+    margin-left:10%;
+    position:absolute;
+    top:63px;
+
 }
 #sports {
     background-color: white;
@@ -250,4 +250,19 @@ p {
 h4{
     float:left;
     margin-top:10px;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: #30abdf;
 }
