@@ -20,7 +20,7 @@ document.getElementById('randomid').innerHTML = userID;
 
 //Redirect to topics page
 function redirect() {
-	window.location.replace("../Topics2/topics2.html")
+	window.location.replace("../TopicPage/topicsindex.html")
 };
 
 console.log(localStorage.getItem('userID'));
