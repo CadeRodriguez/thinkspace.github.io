@@ -217,6 +217,7 @@ h1 {
     left: 38%;
     top: 35%;
     width: 100%;
+
 }
 
 .comment_input {
@@ -231,25 +232,27 @@ h1 {
     border-radius: 4px;
     text-align: left;
     /*overflow-y: auto;
-    /*overflow-y: auto;*/
+    overflow-y: auto;*/
 }
 
 
 #comment {
     padding: 1%;
+    padding-left:2%;
+    padding-right:0px;
     height: 20%;
-    left: -20px;
+    width:37%;
+
 }
 
 
-#picsubmit {
+/*#picsubmit {
     display: inline-block;
-    margin: 0px;
+    margin-top: 10%;
     padding: 0px;
-    border: 0px;
-    top: 20px;
+    border: 0px;    
     position: relative;
-}
+}*/
 
 
 .commenticon {
@@ -259,7 +262,7 @@ h1 {
 }  
 
 .commentnumber {
-    top: -20px;
+    top: -70px;
     font-size: 10px;
     margin-right: 2%;
 }
@@ -270,4 +273,8 @@ h1 {
     font-size: 3%;
     border-radius: 4px;
     background-color: #a9b4ba;
+}
+
+#make_comment {
+    margin-right:37%;
 }

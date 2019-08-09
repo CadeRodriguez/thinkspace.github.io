@@ -41,7 +41,7 @@ function saveItemToDatabase(acomment) {
     })  
         .then(function (docRef) {
             docRef.get().then(function (doc) {
-                //putCommentOnPage(doc);
+                putCommentOnPage(doc);
 
             });
         });
@@ -58,11 +58,11 @@ function putCommentOnPage(doc) {
     comment_text_elem.innerHTML = doc.data().comment;    
 
     
-    var personal_icon = document.getElementById("mainimg").value; //this
-    var commentpersonalicon = document.createElement("img");  //is
-    commentpersonalicon.src = personal_icon; // the section
-    commentpersonalicon.classList.add("commenticon"); //that needs
-    comment_input.appendChild(commentpersonalicon); //work
+    //var personal_icon = document.getElementById("mainimg").value; //this
+    //var commentpersonalicon = document.createElement("img");  //is
+    //commentpersonalicon.src = personal_icon; // the section
+    //commentpersonalicon.classList.add("commenticon"); //that needs
+    //comment_input.appendChild(commentpersonalicon); //work
     console.log("im working up to here");
 
 
