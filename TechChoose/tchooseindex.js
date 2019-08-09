@@ -142,22 +142,6 @@ function savePhotoToDatabase(photo) {
 function premium() {
 	window.location.replace("PremiumPage/premiumindex.html");
 }
-//LINKS
-function politicschoose() {
-	window.location.replace("../PoliticsChoose/pchooseindex.html");
-};
-
-function sportschoose() {
-	window.location.replace("../SportsChoose/schooseindex.html");
-};
-
-function entchoose() {
-	window.location.replace("../EntertainmentChoose/echooseindex.html");
-};
-
-function techchoose() {
-	window.location.replace("../TechChoose/tchooseindex.html");
-};
 
 function techbig() {
 	window.location.replace("../BigNewsFeeds/Tech/bigtechindex.html");
